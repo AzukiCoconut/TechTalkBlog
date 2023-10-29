@@ -15,22 +15,22 @@ Comments.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        post_id: {
+        blogpost_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             references: {
-                model: 'blogpost',
+                model: 'blogposts',
                 key: 'id',
-            },
+                unique: false,
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             references: {
-                model: 'user',
+                model: 'users',
                 key: 'id',
-            },
-        },
+                unique: false,
+            }
+        }
     },
     {
         sequelize,

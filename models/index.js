@@ -3,7 +3,7 @@ const Users = require('./Users');
 const Comments = require('./Comments');
 
 Users.hasMany(BlogPosts, {
-    foreignKey: 'User_id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
@@ -22,7 +22,7 @@ Users.belongsToMany(BlogPosts, {
 BlogPosts.belongsToMany(Users, {
     through: {
         model: Comments,
-        unique: false,
+        unique: false
     },
     as: 'blogpost_comment'
 });
