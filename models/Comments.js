@@ -15,20 +15,25 @@ Comments.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        created_on: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
         blogpost_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'blogposts',
                 key: 'id',
-                unique: false,
             }
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'users',
                 key: 'id',
-                unique: false,
             }
         }
     },
