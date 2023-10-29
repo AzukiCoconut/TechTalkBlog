@@ -17,18 +17,18 @@ Comments.init(
         },
         blogpost_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'blogposts',
                 key: 'id',
-                unique: false,
             }
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'users',
                 key: 'id',
-                unique: false,
             }
         }
     },

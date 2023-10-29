@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         });
         const posts = blogPosts.map((post) => post.get({plain: true}));
 
-        res.status(200).json(posts);
+        res.render('homepage', {posts});
     } catch (err) {
         res.status(500).json(err);
     }
@@ -27,12 +27,16 @@ router.get('/blogpost/:id', async (req, res) => {
                     model: Users,
                     attributes: {exclude: ['password']},
                 },
+                {
+                    model: Comments,
+                    include: [{model: Users, attributes: {exclude: ['password']}},],
+                },
             ],
         });
 
         const singlePost = blogPost.get({plain: true});
 
-        res.status(200).json(singlePost);
+        res.render('blogpost', singlePost);
     } catch (err) {
         res.status(500).json(err);
     }
