@@ -42,6 +42,28 @@ router.get('/blogpost/:id', async (req, res) => {
     }
 });
 
+router.get('/blogpost/user/:id', async (req, res) => {
+    try {
+        const blogPost = await BlogPosts.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Users,
+                    attributes: {exclude: ['password']},
+                },
+                {
+                    model: Comments,
+                    include: [{model: Users, attributes: {exclude: ['password']}},],
+                },
+            ],
+        });
+        const singlePost = blogPost.get({plain: true});
+
+        res.render('blogpost-edit', singlePost);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/dashboard', async (req, res) => {
     try {
         const userData = await Users.findByPk("1", {
@@ -51,7 +73,7 @@ router.get('/dashboard', async (req, res) => {
 
         const user = userData.get({ plain: true });
 
-        res.status(200).json(user);
+        res.render('dashboard', user);
     } catch (err) {
         res.status(500).json(err);
     }
