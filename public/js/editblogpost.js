@@ -1,5 +1,7 @@
 const submit = document.querySelector('#submit');
 const cancel = document.querySelector('#cancel');
+const deleteBtn = document.querySelector('#delete');
+
 
 const updateBlogPost = async (event) => {
     event.preventDefault();
@@ -23,11 +25,28 @@ const updateBlogPost = async (event) => {
     }
 };
 
+const deletePost = async (event) => {
+    event.preventDefault();
+
+    console.log("Delete button pushed")
+    const id = document.querySelector('#title').getAttribute('data-post-id');
+    const response = await fetch(`/api/blogposts/${id}`, {
+        method: 'DELETE',
+    });
+
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert(response.statusText);
+    }
+};
+
 const cancelUpdate = async (event) => {
     event.preventDefault();
 
     document.location.replace('/dashboard');
 }
 
+deleteBtn.addEventListener('click', deletePost);
 submit.addEventListener('click', updateBlogPost);
 cancel.addEventListener('click', cancelUpdate);
