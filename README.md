@@ -15,10 +15,10 @@ Link to the deployed website is here:  https://damp-forest-69847-5456bf5ec411.he
 
 I learned alot from this project.  It was great to be able to finally build something from database to html.  With that I would like to acknowledge a few places that helped me in the development of this application:
 
-    1. I would like to acknowledge that I pull a lot of code from examples provided to me through the UNB Coding Bootcamp. Specifically Modules 12, 13, and 14. 
-    2. Bootstrap documentation for css framework: https://getbootstrap.com/
-    3. Deploy with Heroku and MySQL - Request-Response: The Full-Stack Blog: https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
-    4. Get First Part of String - CodePal: https://codepal.ai/code-generator/query/BQgjXfS9/javascript-function-get-first-part-of-string
+1. I would like to acknowledge that I pull a lot of code from examples provided to me through the UNB Coding Bootcamp. Specifically Modules 12, 13, and 14. 
+2. Bootstrap documentation for css framework: https://getbootstrap.com/
+3. Deploy with Heroku and MySQL - Request-Response: The Full-Stack Blog: https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
+4. Get First Part of String - CodePal: https://codepal.ai/code-generator/query/BQgjXfS9/javascript-function-get-first-part-of-string
 
 ## License
  
