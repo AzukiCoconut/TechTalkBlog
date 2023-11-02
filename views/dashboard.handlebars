@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center">
     <div class="col-auto">
-        <h2>Welcome, {{name}}!</h2>
+        <h2>Welcome, {{user.name}}!</h2>
     </div>
     <button type="button" class="btn btn-outline-secondary" id="addNew">New Post</button>
 </div>
@@ -13,7 +13,7 @@
     <form class="card-body blog-form">
         <div class="mb-3">
             <label for="title" class="form-label">Blog Title:</label>
-            <input class="form-control" name="title" id="title" data-post-id="{{id}}"></input>
+            <input class="form-control" name="title" id="title" data-post-id="{{user.id}}"></input>
         </div>
         <div class="mb-3">
             <label for="text" class="form-label">Blog Text:</label>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="post-list">
-    {{#each blogposts as |blogpost|}}
+    {{#each user.blogposts as |blogpost|}}
     {{> blogpost-header}}
     {{/each}}
 </div>
